@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Leonida Customs — Supercar Build Sheet</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: linear-gradient(180deg, #0a0a1f 0%, #1d0c34 52%, #2b0a2f 100%);
+    padding: 42px 46px 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+  }
+  .sheet { width: 988px; height: 1004px; display: flex; flex-direction: column; }
+
+  /* masthead */
+  .masthead { display: flex; justify-content: space-between; align-items: flex-start; }
+  .shop-name {
+    font-size: 54px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-shadow: 0 0 18px rgba(255, 45, 146, 0.85), 0 0 44px rgba(255, 45, 146, 0.45);
+  }
+  .shop-name em { font-style: normal; color: #ff2d92; }
+  .shop-sub {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: #00e5ff;
+  }
+  .shop-stamp {
+    flex: 0 0 auto;
+    margin-top: 4px;
+    padding: 10px 16px;
+    border: 3px solid #ff2d92;
+    border-radius: 12px;
+    color: #ff2d92;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 45, 146, 0.8);
+    box-shadow: 0 0 16px rgba(255, 45, 146, 0.55), inset 0 0 12px rgba(255, 45, 146, 0.25);
+  }
+  .car-line {
+    margin-top: 14px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #9fb2c8;
+  }
+  .car-line strong { color: #ffffff; }
+  .car-line .pickup { color: #ff2d92; }
+  .glow-rule {
+    height: 3px;
+    margin-top: 18px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #ff2d92, #00e5ff);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+  }
+
+  /* hero car */
+  .hero-car svg { display: block; width: 988px; height: 232px; }
+
+  /* bill panel */
+  .bill {
+    flex: 1;
+    padding: 6px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+  }
+  .charge {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 11px 0 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 29px;
+  }
+  .charge:last-child { border-bottom: none; }
+  .charge .what { color: #ffffff; }
+  .charge .what b { font-weight: 900; }
+  .charge .what i { font-style: normal; font-weight: 400; color: #8fa8bf; }
+  .charge .cost { margin-left: 16px; font-weight: 900; color: #ffd21f; white-space: nowrap; }
+  .charge .cost.zero { color: #ff2d92; }
+
+  /* total */
+  .sum {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 6px 0;
+  }
+  .sum .sum-label { font-size: 32px; font-weight: 900; letter-spacing: 3px; }
+  .sum .sum-value {
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffd21f;
+    text-shadow: 0 0 16px rgba(255, 210, 31, 0.45);
+  }
+
+  /* paid footer */
+  .paid { display: flex; align-items: center; gap: 28px; padding-top: 12px; }
+  .paid .ghost {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    background: #ec008c;
+    box-shadow: 0 0 24px rgba(255, 45, 146, 0.6);
+  }
+  .paid .paid-big { font-size: 40px; font-weight: 900; line-height: 1.05; }
+  .paid .paid-note { margin-top: 6px; font-size: 23px; font-weight: 700; color: #b8c8dc; }
+  .fun-pill {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 22px;
+    border-radius: 999px;
+    background: #ffffff;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+  .fun-pill .make { color: #111111; }
+  .fun-pill .dotfun { color: #ec008c; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="masthead">
+    <div>
+      <div class="shop-name">LEONIDA <em>CUSTOMS</em></div>
+      <div class="shop-sub">SUPERCAR BUILD SHEET &mdash; INVOICE #0013</div>
+    </div>
+    <div class="shop-stamp">13 YEARS<br>IN THE SHOP</div>
+  </div>
+  <div class="car-line"><strong>GROTTI TURISMO R</strong> &nbsp;&middot;&nbsp; DROPPED OFF SEP 17, 2013 &nbsp;&middot;&nbsp; PICKUP <span class="pickup">NOV 19, 2026</span></div>
+  <div class="glow-rule"></div>
+
+  <div class="hero-car">
+    <svg viewBox="0 40 1000 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supercar side profile">
+      <defs>
+        <linearGradient id="bodyPaint" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff2d92"/>
+          <stop offset="0.55" stop-color="#ff5e3a"/>
+          <stop offset="1" stop-color="#ff9a1f"/>
+        </linearGradient>
+        <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="10" result="blurred"/>
+          <feMerge>
+            <feMergeNode in="blurred"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <!-- neon light spilling under the car -->
+      <ellipse cx="500" cy="272" rx="430" ry="16" fill="#ff2d92" opacity="0.55" filter="url(#softGlow)"/>
+      <ellipse cx="500" cy="270" rx="380" ry="7" fill="#00e5ff" opacity="0.5" filter="url(#softGlow)"/>
+      <!-- low wedge body -->
+      <path d="M70 250 C85 225 130 212 190 203 C240 172 310 162 390 158 C470 154 540 158 600 170 C680 183 760 198 845 212 C900 221 935 230 948 240 C955 247 948 254 932 256 L85 256 C72 256 66 255 70 250 Z" fill="url(#bodyPaint)"/>
+      <!-- cabin glass -->
+      <path d="M320 186 L370 170 L545 170 L610 190 L345 194 Z" fill="#07293d" stroke="#00e5ff" stroke-width="2" stroke-opacity="0.7"/>
+      <!-- door vent -->
+      <path d="M650 224 L708 224 L698 244 L646 244 Z" fill="#000000" opacity="0.35"/>
+      <!-- lamps -->
+      <path d="M908 224 L938 231 L932 241 L902 235 Z" fill="#fff8c4"/>
+      <path d="M76 221 L108 217 L108 227 L79 231 Z" fill="#ff1744"/>
+      <!-- wheels -->
+      <g>
+        <circle cx="230" cy="255" r="50" fill="#0d0d0d" stroke="#333333" stroke-width="3"/>
+        <circle cx="230" cy="255" r="28" fill="#e8e8e8"/>
+        <circle cx="230" cy="255" r="28" fill="none" stroke="#999999" stroke-width="2"/>
+        <circle cx="230" cy="255" r="9" fill="#111111"/>
+        <circle cx="795" cy="255" r="50" fill="#0d0d0d" stroke="#333333" stroke-width="3"/>
+        <circle cx="795" cy="255" r="28" fill="#e8e8e8"/>
+        <circle cx="795" cy="255" r="28" fill="none" stroke="#999999" stroke-width="2"/>
+        <circle cx="795" cy="255" r="9" fill="#111111"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="bill">
+    <div class="charge"><div class="what"><b>Wanted level reset</b> <i>&mdash; 5 stars to 0</i></div><div class="cost">$5,000</div></div>
+    <div class="charge"><div class="what"><b>Spoiler</b> <i>&mdash; taller than Mount Kalaga</i></div><div class="cost">$2,600</div></div>
+    <div class="charge"><div class="what"><b>Jason &amp; Lucia joyride</b> <i>&mdash; 4,811 days</i></div><div class="cost">$4,811</div></div>
+    <div class="charge"><div class="what"><b>Trailer 3</b> <i>&mdash; still not out</i></div><div class="cost">$13</div></div>
+    <div class="charge"><div class="what"><b>Vice Pink paint</b> <i>&mdash; drying since 2013</i></div><div class="cost">$1,300</div></div>
+    <div class="charge"><div class="what"><b>Turbo</b> <i>&mdash; 0&ndash;60 in 13 years</i></div><div class="cost zero">$0.00</div></div>
+  </div>
+
+  <div class="sum"><div class="sum-label">TOTAL DUE</div><div class="sum-value">$13,724</div></div>
+
+  <div class="paid">
+    <img class="ghost" src="ghost-badge.png" alt="make.fun ghost">
+    <div>
+      <div class="paid-big">PAID BY MY AI AGENT</div>
+      <div class="paid-note">with a bounty payout it earned on</div>
+      <div class="fun-pill"><span class="make">make</span><span class="dotfun">.fun</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
