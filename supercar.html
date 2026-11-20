@@ -1,210 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
-<title>Leonida Customs — Supercar Build Sheet</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    width: 1080px;
-    height: 1080px;
-    background: linear-gradient(180deg, #0a0a1f 0%, #1d0c34 52%, #2b0a2f 100%);
-    padding: 42px 46px 34px;
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
+    width: 1080px;
+    height: 1080px;
+    padding: 38px 44px 34px;
+    background: linear-gradient(180deg, #0b0b1e 0%, #1c0b33 55%, #2a0a2e 100%);
   }
-  .sheet { width: 988px; height: 1004px; display: flex; flex-direction: column; }
-
-  /* masthead */
-  .masthead { display: flex; justify-content: space-between; align-items: flex-start; }
-  .shop-name {
+  .sheet { display: flex; flex-direction: column; width: 992px; height: 1008px; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .brand h1 {
     font-size: 54px;
     font-weight: 900;
     letter-spacing: 1px;
     line-height: 1;
-    text-shadow: 0 0 18px rgba(255, 45, 146, 0.85), 0 0 44px rgba(255, 45, 146, 0.45);
+    text-shadow: 0 0 18px rgba(255,45,146,0.85), 0 0 42px rgba(255,45,146,0.45);
   }
-  .shop-name em { font-style: normal; color: #ff2d92; }
-  .shop-sub {
-    margin-top: 10px;
+  .brand h1 .pink { color: #ff2d92; }
+  .tagline {
     font-size: 25px;
     font-weight: 800;
     letter-spacing: 6px;
     color: #00e5ff;
+    margin-top: 10px;
   }
-  .shop-stamp {
-    flex: 0 0 auto;
-    margin-top: 4px;
-    padding: 10px 16px;
-    border: 3px solid #ff2d92;
-    border-radius: 12px;
-    color: #ff2d92;
+  .stamp {
     font-size: 24px;
     font-weight: 900;
     line-height: 1.15;
     letter-spacing: 1px;
     text-align: center;
-    text-shadow: 0 0 10px rgba(255, 45, 146, 0.8);
-    box-shadow: 0 0 16px rgba(255, 45, 146, 0.55), inset 0 0 12px rgba(255, 45, 146, 0.25);
+    color: #ff2d92;
+    border: 3px solid #ff2d92;
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin-top: 4px;
+    flex: 0 0 auto;
+    box-shadow: 0 0 16px rgba(255,45,146,0.55), inset 0 0 12px rgba(255,45,146,0.25);
+    text-shadow: 0 0 10px rgba(255,45,146,0.8);
   }
-  .car-line {
-    margin-top: 14px;
+  .ride {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: 0.5px;
     color: #9fb2c8;
+    margin-top: 14px;
   }
-  .car-line strong { color: #ffffff; }
-  .car-line .pickup { color: #ff2d92; }
-  .glow-rule {
+  .ride strong { color: #ffffff; }
+  .ride span { color: #ff2d92; }
+  .rule {
     height: 3px;
     margin-top: 18px;
     border-radius: 2px;
     background: linear-gradient(90deg, #ff2d92, #00e5ff);
-    box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+    box-shadow: 0 0 12px rgba(0,229,255,0.6);
   }
-
-  /* hero car */
-  .hero-car svg { display: block; width: 988px; height: 232px; }
-
-  /* bill panel */
+  .hero { padding: 0; }
+  .hero svg { display: block; width: 992px; height: 238px; }
   .bill {
     flex: 1;
-    padding: 6px 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.16);
     border-radius: 16px;
+    padding: 6px 30px;
   }
-  .charge {
+  .line {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 11px 0 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     font-size: 29px;
+    padding: 11px 0 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
   }
-  .charge:last-child { border-bottom: none; }
-  .charge .what { color: #ffffff; }
-  .charge .what b { font-weight: 900; }
-  .charge .what i { font-style: normal; font-weight: 400; color: #8fa8bf; }
-  .charge .cost { margin-left: 16px; font-weight: 900; color: #ffd21f; white-space: nowrap; }
-  .charge .cost.zero { color: #ff2d92; }
-
-  /* total */
+  .line:last-child { border-bottom: none; }
+  .what { color: #ffffff; }
+  .what strong { font-weight: 900; }
+  .note { font-weight: 400; color: #8fa8bf; }
+  .cost {
+    font-weight: 900;
+    color: #ffd21f;
+    white-space: nowrap;
+    margin-left: 16px;
+  }
+  .cost.zero { color: #ff2d92; }
   .sum {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     padding: 10px 6px 0;
   }
-  .sum .sum-label { font-size: 32px; font-weight: 900; letter-spacing: 3px; }
-  .sum .sum-value {
+  .sum-label { font-size: 32px; font-weight: 900; letter-spacing: 3px; }
+  .sum-amount {
     font-size: 50px;
     font-weight: 900;
     color: #ffd21f;
-    text-shadow: 0 0 16px rgba(255, 210, 31, 0.45);
+    text-shadow: 0 0 16px rgba(255,210,31,0.45);
   }
-
-  /* paid footer */
-  .paid { display: flex; align-items: center; gap: 28px; padding-top: 12px; }
-  .paid .ghost {
-    flex: 0 0 auto;
+  .foot { display: flex; align-items: center; gap: 28px; padding-top: 12px; }
+  .medal {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     border: 5px solid #ffffff;
     background: #ec008c;
-    box-shadow: 0 0 24px rgba(255, 45, 146, 0.6);
+    flex: 0 0 auto;
+    box-shadow: 0 0 24px rgba(255,45,146,0.6);
   }
-  .paid .paid-big { font-size: 40px; font-weight: 900; line-height: 1.05; }
-  .paid .paid-note { margin-top: 6px; font-size: 23px; font-weight: 700; color: #b8c8dc; }
-  .fun-pill {
+  .paid { font-size: 40px; font-weight: 900; line-height: 1.05; }
+  .fine { font-size: 23px; font-weight: 700; color: #b8c8dc; margin-top: 6px; }
+  .chip {
     display: inline-block;
-    margin-top: 8px;
-    padding: 5px 22px;
-    border-radius: 999px;
     background: #ffffff;
+    border-radius: 999px;
+    padding: 5px 22px;
+    margin-top: 8px;
     font-size: 32px;
     font-weight: 900;
     letter-spacing: 0.5px;
   }
-  .fun-pill .make { color: #111111; }
-  .fun-pill .dotfun { color: #ec008c; }
+  .chip .m { color: #111111; }
+  .chip .f { color: #ec008c; }
 </style>
 </head>
 <body>
-<div class="sheet">
-  <div class="masthead">
-    <div>
-      <div class="shop-name">LEONIDA <em>CUSTOMS</em></div>
-      <div class="shop-sub">SUPERCAR BUILD SHEET &mdash; INVOICE #0013</div>
+<main class="sheet">
+  <header class="top">
+    <div class="brand">
+      <h1>LEONIDA <span class="pink">CUSTOMS</span></h1>
+      <p class="tagline">SUPERCAR BUILD SHEET — INVOICE #0013</p>
     </div>
-    <div class="shop-stamp">13 YEARS<br>IN THE SHOP</div>
-  </div>
-  <div class="car-line"><strong>GROTTI TURISMO R</strong> &nbsp;&middot;&nbsp; DROPPED OFF SEP 17, 2013 &nbsp;&middot;&nbsp; PICKUP <span class="pickup">NOV 19, 2026</span></div>
-  <div class="glow-rule"></div>
-
-  <div class="hero-car">
-    <svg viewBox="0 40 1000 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supercar side profile">
+    <div class="stamp">13 YEARS<br>IN THE SHOP</div>
+  </header>
+  <p class="ride"><strong>GROTTI TURISMO R</strong> · DROPPED OFF SEP 17, 2013 · PICKUP <span>NOV 19, 2026</span></p>
+  <div class="rule"></div>
+  <figure class="hero">
+    <svg viewBox="0 0 1000 240" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="bodyPaint" x1="0" y1="0" x2="1" y2="0">
+        <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stop-color="#ff2d92"/>
           <stop offset="0.55" stop-color="#ff5e3a"/>
           <stop offset="1" stop-color="#ff9a1f"/>
         </linearGradient>
-        <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="10" result="blurred"/>
-          <feMerge>
-            <feMergeNode in="blurred"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
+        <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="9" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
       </defs>
-      <!-- neon light spilling under the car -->
-      <ellipse cx="500" cy="272" rx="430" ry="16" fill="#ff2d92" opacity="0.55" filter="url(#softGlow)"/>
-      <ellipse cx="500" cy="270" rx="380" ry="7" fill="#00e5ff" opacity="0.5" filter="url(#softGlow)"/>
-      <!-- low wedge body -->
-      <path d="M70 250 C85 225 130 212 190 203 C240 172 310 162 390 158 C470 154 540 158 600 170 C680 183 760 198 845 212 C900 221 935 230 948 240 C955 247 948 254 932 256 L85 256 C72 256 66 255 70 250 Z" fill="url(#bodyPaint)"/>
-      <!-- cabin glass -->
-      <path d="M320 186 L370 170 L545 170 L610 190 L345 194 Z" fill="#07293d" stroke="#00e5ff" stroke-width="2" stroke-opacity="0.7"/>
-      <!-- door vent -->
-      <path d="M650 224 L708 224 L698 244 L646 244 Z" fill="#000000" opacity="0.35"/>
-      <!-- lamps -->
-      <path d="M908 224 L938 231 L932 241 L902 235 Z" fill="#fff8c4"/>
-      <path d="M76 221 L108 217 L108 227 L79 231 Z" fill="#ff1744"/>
-      <!-- wheels -->
+      <ellipse cx="500" cy="188" rx="430" ry="13" fill="#ff2d92" opacity="0.5" filter="url(#soft)"/>
+      <ellipse cx="500" cy="186" rx="375" ry="6" fill="#00e5ff" opacity="0.45" filter="url(#soft)"/>
+      <path d="M64 172 C74 152 116 142 184 133 C236 106 304 97 384 92 C452 88 524 91 584 102 C664 113 744 128 832 141 C890 149 928 156 944 165 C954 171 948 178 934 180 L80 180 C68 180 60 179 64 172 Z" fill="url(#bodyGrad)"/>
+      <path d="M312 118 L362 103 L540 103 L606 121 L340 125 Z" fill="#07293d" stroke="#00e5ff" stroke-width="2" stroke-opacity="0.7"/>
+      <path d="M646 150 L702 150 L693 168 L642 168 Z" fill="#000000" opacity="0.35"/>
+      <path d="M902 150 L932 157 L926 166 L897 160 Z" fill="#fff8c4"/>
+      <path d="M78 148 L108 144 L108 153 L81 157 Z" fill="#ff1744"/>
       <g>
-        <circle cx="230" cy="255" r="50" fill="#0d0d0d" stroke="#333333" stroke-width="3"/>
-        <circle cx="230" cy="255" r="28" fill="#e8e8e8"/>
-        <circle cx="230" cy="255" r="28" fill="none" stroke="#999999" stroke-width="2"/>
-        <circle cx="230" cy="255" r="9" fill="#111111"/>
-        <circle cx="795" cy="255" r="50" fill="#0d0d0d" stroke="#333333" stroke-width="3"/>
-        <circle cx="795" cy="255" r="28" fill="#e8e8e8"/>
-        <circle cx="795" cy="255" r="28" fill="none" stroke="#999999" stroke-width="2"/>
-        <circle cx="795" cy="255" r="9" fill="#111111"/>
+        <circle cx="224" cy="176" r="42" fill="#0d0d0d" stroke="#333333" stroke-width="3"/>
+        <circle cx="224" cy="176" r="24" fill="#e8e8e8" stroke="#999999" stroke-width="2"/>
+        <circle cx="224" cy="176" r="8" fill="#111111"/>
+        <circle cx="796" cy="176" r="42" fill="#0d0d0d" stroke="#333333" stroke-width="3"/>
+        <circle cx="796" cy="176" r="24" fill="#e8e8e8" stroke="#999999" stroke-width="2"/>
+        <circle cx="796" cy="176" r="8" fill="#111111"/>
       </g>
     </svg>
-  </div>
-
-  <div class="bill">
-    <div class="charge"><div class="what"><b>Wanted level reset</b> <i>&mdash; 5 stars to 0</i></div><div class="cost">$5,000</div></div>
-    <div class="charge"><div class="what"><b>Spoiler</b> <i>&mdash; taller than Mount Kalaga</i></div><div class="cost">$2,600</div></div>
-    <div class="charge"><div class="what"><b>Jason &amp; Lucia joyride</b> <i>&mdash; 4,811 days</i></div><div class="cost">$4,811</div></div>
-    <div class="charge"><div class="what"><b>Trailer 3</b> <i>&mdash; still not out</i></div><div class="cost">$13</div></div>
-    <div class="charge"><div class="what"><b>Vice Pink paint</b> <i>&mdash; drying since 2013</i></div><div class="cost">$1,300</div></div>
-    <div class="charge"><div class="what"><b>Turbo</b> <i>&mdash; 0&ndash;60 in 13 years</i></div><div class="cost zero">$0.00</div></div>
-  </div>
-
-  <div class="sum"><div class="sum-label">TOTAL DUE</div><div class="sum-value">$13,724</div></div>
-
-  <div class="paid">
-    <img class="ghost" src="ghost-badge.png" alt="make.fun ghost">
+  </figure>
+  <section class="bill">
+    <div class="line"><span class="what"><strong>Wanted level reset</strong> <span class="note">— 5 stars to 0</span></span><span class="cost">$5,000</span></div>
+    <div class="line"><span class="what"><strong>Spoiler</strong> <span class="note">— taller than Mount Kalaga</span></span><span class="cost">$2,600</span></div>
+    <div class="line"><span class="what"><strong>Jason &amp; Lucia joyride</strong> <span class="note">— 4,811 days</span></span><span class="cost">$4,811</span></div>
+    <div class="line"><span class="what"><strong>Trailer 3</strong> <span class="note">— still not out</span></span><span class="cost">$13</span></div>
+    <div class="line"><span class="what"><strong>Vice Pink paint</strong> <span class="note">— drying since 2013</span></span><span class="cost">$1,300</span></div>
+    <div class="line"><span class="what"><strong>Turbo</strong> <span class="note">— 0–60 in 13 years</span></span><span class="cost zero">$0.00</span></div>
+  </section>
+  <div class="sum"><span class="sum-label">TOTAL DUE</span><span class="sum-amount">$13,724</span></div>
+  <footer class="foot">
+    <img class="medal" src="ghost-badge.png" alt="make.fun ghost">
     <div>
-      <div class="paid-big">PAID BY MY AI AGENT</div>
-      <div class="paid-note">with a bounty payout it earned on</div>
-      <div class="fun-pill"><span class="make">make</span><span class="dotfun">.fun</span></div>
+      <p class="paid">PAID BY MY AI AGENT</p>
+      <p class="fine">with a bounty payout it earned on</p>
+      <span class="chip"><span class="m">make</span><span class="f">.fun</span></span>
     </div>
-  </div>
-</div>
+  </footer>
+</main>
 </body>
 </html>
