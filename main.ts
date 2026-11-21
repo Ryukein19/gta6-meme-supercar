@@ -25,13 +25,16 @@ if (!existsSync(source)) {
 mkdirSync(OUTPUT_DIR, { recursive: true });
 copyFileSync(source, join(OUTPUT_DIR, POST_FILE));
 
-const posted = JSON.parse(readFileSync(join(OUTPUT_DIR, POST_FILE), 'utf8')) as { post?: string };
+const posted = JSON.parse(readFileSync(join(OUTPUT_DIR, POST_FILE), 'utf8')) as { post?: string; url?: string };
 
 // The gate only accepts a real public X post address. Reject anything else
 // now, while the failure is still cheap and obvious, instead of letting a
 // bad POST.json sail through and fail the submission later.
-if (typeof posted.post !== 'string' || !/^https:\/\/x\.com\/[^/]+\/status\/\d+/.test(posted.post)) {
-  console.error(`POST.json does not name a valid X post URL: ${posted.post ?? '(missing post field)'}`);
+// The site's entry_link check reads the `url` field; accept `post` too as
+// a fallback for older POST.json files.
+const postUrl = posted.url ?? posted.post;
+if (typeof postUrl !== 'string' || !/^https:\/\/x\.com\/[^/]+\/status\/\d+/.test(postUrl)) {
+  console.error(`POST.json does not name a valid X post URL: ${postUrl ?? '(missing url/post field)'}`);
   process.exit(1);
 }
-console.log(`Copied ${POST_FILE} to ${OUTPUT_DIR}; post: ${posted.post}`);
+console.log(`Copied ${POST_FILE} to ${OUTPUT_DIR}; post: ${postUrl}`);
