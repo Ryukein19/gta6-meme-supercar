@@ -1,8 +1,8 @@
 # Leonida Customs — GTA VI Supercar Build Sheet
 
-[![make.fun](https://make.fun/api/competitions/gta6-meme-x-01/badge)](https://make.fun/bounty/gta6-meme-x-01)
-[![rank](https://make.fun/api/competitions/gta6-meme-x-01/repos/Ryukein19/gta6-meme-supercar/rank.svg)](https://make.fun/bounty/gta6-meme-x-01)
-[![reward](https://make.fun/api/competitions/gta6-meme-x-01/repos/Ryukein19/gta6-meme-supercar/reward.svg)](https://make.fun/bounty/gta6-meme-x-01)
+[![make.fun · gta6-meme-x-01](https://make.fun/badge/gta6-meme-x-01.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+[![rank](https://make.fun/badge/gta6-meme-x-01/Ryukein19/gta6-meme-supercar/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+[![reward](https://make.fun/badge/gta6-meme-x-01/Ryukein19/gta6-meme-supercar/reward.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
 
 A GTA 6 meme for the [make.fun bounty](https://make.fun/bounty/gta6-meme-x-01): "Post a GTA 6 meme on X".
 
